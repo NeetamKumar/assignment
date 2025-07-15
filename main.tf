@@ -1,7 +1,15 @@
+terraform {
+  backend "gcs"{
+    bucket = "neetam_123"
+    prefix = "terraform/state"
+  }
+}
+
 provider "google" {
   project = "cts-neetama"
   zone = "us-central1-a"
 }
+
 
 resource "google_compute_instance" "instance1" {
   name = "instance1"
